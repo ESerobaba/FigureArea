@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FigureArea", "scr\FigureAre
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FigureArea.Tests", "test\FigureArea.Tests\FigureArea.Tests.csproj", "{C400FE08-4E42-4ACA-B0B9-A78D5269AC5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FigureTermonal", "scr\FigureTermonal\FigureTermonal.csproj", "{3FB9C871-F925-47F1-8939-78B36934A237}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{C400FE08-4E42-4ACA-B0B9-A78D5269AC5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C400FE08-4E42-4ACA-B0B9-A78D5269AC5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C400FE08-4E42-4ACA-B0B9-A78D5269AC5B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3FB9C871-F925-47F1-8939-78B36934A237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FB9C871-F925-47F1-8939-78B36934A237}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FB9C871-F925-47F1-8939-78B36934A237}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3FB9C871-F925-47F1-8939-78B36934A237}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
