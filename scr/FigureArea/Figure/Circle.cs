@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FigureArea
 {
-    internal class Circle : IFigure
+    public class Circle : IFigure
     {
         private double radius;
         public double Radius

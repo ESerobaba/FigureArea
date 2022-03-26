@@ -79,5 +79,15 @@ namespace FigureArea.Tests
             }));
             
         }
+        [Fact]
+        public void GetRightTriangle()
+        {
+            Triangle triangle = new Triangle(new double[]
+            {
+                4.0,3.0,5.0
+            });
+            Assert.True(triangle.rightTriangle);
+
+        }
     }
 }

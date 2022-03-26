@@ -4,7 +4,7 @@ using System.Text;
 using System.Linq;
 namespace FigureArea
 {
-    internal class Triangle : IFigure
+    public class Triangle : IFigure
     {
         private double x1;
         private double x2;
@@ -54,7 +54,7 @@ namespace FigureArea
                     x3 = value;
             }
         }
-        bool rightTriangle { get; set; }
+        public bool rightTriangle { get; set; }
         
         public Triangle(params double[] sides)
         {
