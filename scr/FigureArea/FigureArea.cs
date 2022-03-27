@@ -2,19 +2,15 @@
 using System.Linq;
 namespace FigureArea
 {
+    /// <summary>
+    /// Describes the class getting the area of shapes
+    /// </summary>
     public class XFigureArea
     {
+        /// <summary>
+        /// Area figure
+        /// </summary>
         public double Area { get; set; }
-        public XFigureArea(double radius)
-        {
-            Circle circle = new Circle(radius);
-            Area = circle.GetArea();
-        }
-        public XFigureArea(double[] args)
-        {
-            Triangle triangle = new Triangle(args.ToArray());
-            Area = triangle.GetArea();
-        }
         public XFigureArea(string value)
         {
             GetValue getValue = new GetValue(value);
@@ -39,7 +35,6 @@ namespace FigureArea
                 default:
                     throw new ArgumentException("Data entered incorrectly");
                     break;
-
             }
 
         }

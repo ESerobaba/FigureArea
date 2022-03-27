@@ -2,13 +2,21 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+
+
 namespace FigureArea
 {
+    /// <summary>
+    /// Class for calculating the area of a Triangle
+    /// </summary>
     public class Triangle : IFigure
-    {
-        private double x1;
-        private double x2;
+    {       
+        private double x1;       
+        private double x2;        
         private double x3;
+        /// <summary>
+        /// Side of the triangle x1
+        /// </summary>
         public double X1
         {
             get
@@ -24,6 +32,9 @@ namespace FigureArea
                     x1 = value;
             }
         }
+        /// <summary>
+        /// Side of the triangle x2
+        /// </summary>
         public double X2
         {
             get
@@ -39,6 +50,9 @@ namespace FigureArea
                     x2 = value;
             }
         }
+        /// <summary>
+        /// Side of the triangle x3
+        /// </summary>
         public double X3
         {
             get
@@ -54,6 +68,10 @@ namespace FigureArea
                     x3 = value;
             }
         }
+
+        /// <summary>
+        /// Is the triangle rectangular
+        /// </summary>
         public bool rightTriangle { get; set; }
         
         public Triangle(params double[] sides)
@@ -76,6 +94,10 @@ namespace FigureArea
                 throw;
             }
         }
+        /// <summary>
+        /// Calculating the area of a triangle
+        /// </summary>
+        /// <returns>Area</returns>
         public double GetArea()
         {
             double p = (X1 + X2 + X3) / 2;

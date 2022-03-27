@@ -5,11 +5,28 @@ using System.Text;
 
 namespace FigureArea
 {
+    /// <summary>
+    /// Describes the class getting the 
+    /// name and arguments for getting the area of the shapes
+    /// </summary>
     public class GetValue
     {
+        /// <summary>
+        /// Figure name
+        /// </summary>
         public string FigureName { get; set; }
+        /// <summary>
+        /// Arguments for calculating the area of the figure
+        /// </summary>
         public List<double> argsDouble { get; set; }
+        /// <summary>
+        /// Number of arguments, not counting the name
+        /// </summary>
         public int Count { get; set; }
+        /// <summary>
+        /// Getting Shape arguments
+        /// </summary>
+        /// <param name="stringValue">Argument string</param>
         public GetValue(string stringValue)
         {
             List<double> argsDouble = new List<double>();
@@ -34,7 +51,6 @@ namespace FigureArea
                     }
                 }
                 this.argsDouble = argsDouble;
-
             }
         }
     }

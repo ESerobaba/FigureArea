@@ -2,11 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace FigureArea
 {
+    /// <summary>
+    /// Class for calculating the area of a Circle
+    /// </summary>
     public class Circle : IFigure
     {
+        
         private double radius;
+        /// <summary>
+        /// Radius
+        /// </summary>
         public double Radius
         {
             get
@@ -33,6 +41,10 @@ namespace FigureArea
                 throw;
             }
         }
+        /// <summary>
+        /// Calculating the area of a circle
+        /// </summary>
+        /// <returns>Area</returns>
         public double GetArea()
         {
             
