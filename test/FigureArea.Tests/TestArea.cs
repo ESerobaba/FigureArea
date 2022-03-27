@@ -16,34 +16,23 @@ namespace FigureArea.Tests
         {
             double radius = 5.0;
             double area = 2 * Math.PI * radius;
-            XFigureArea figureAreaCircle = new XFigureArea("Circle",new double[]
-            {
-                radius
-            });
+            XFigureArea figureAreaCircle = new XFigureArea($"Circle {radius}");
             Output.WriteLine($"Radius={radius} Area={area}");
             Assert.Equal(figureAreaCircle.Area, area);
             
         }
         [Fact]
-        public void GetCircleAreaThrowNull()
+        public void GetCircleAreaNull()
         {
             double radius = -5.0;
             Output.WriteLine($"Radius={radius}");
-            Assert.Throws<ArgumentException>(() => new XFigureArea("Circle", new double[]
-            {
-                radius
-            }));
-
+            Assert.Throws<ArgumentException>(() => new XFigureArea($"Circle {radius}"));
         }
         [Fact]
-        public void GetCircleAreaThrowNotCircle()
+        public void GetCircleAreaNotCircle()
         {
-            
-            Assert.Throws<NotCircle>(() => new XFigureArea("Circle", new double[]
-            {
-                1,1,1
-            }));
 
+            Assert.Throws<NotCircle>(() => new XFigureArea("Circle 1.0 1.0 1.0"));
         }
         [Fact]
         public void GetTriangleArea()
@@ -51,33 +40,21 @@ namespace FigureArea.Tests
             
             double p = (5.0 + 5.0 + 1.0) / 2.0;
             double area = Math.Sqrt(p * (p - 5.0) * (p - 5.0) * (p - 1.0));
-            XFigureArea figureAreaTriangle = new XFigureArea("Triangle",new double[]
-            {
-                5.0,5.0,1.0
-            });
+            XFigureArea figureAreaTriangle = new XFigureArea("Triangle 5.0 5.0 1.0");
             Output.WriteLine($"P/2 = {p} Area={area}");
             Assert.Equal(area, figureAreaTriangle.Area);
         }
         [Fact]
         public void GetTriangleAreaNullOrNegative()
         {
-            Assert.Throws<ArgumentException>(() => new XFigureArea("Triangle",new double[]
-            {
-                -5.0,5.0,1.0
-            }));
-            Assert.Throws<ArgumentException>(() => new XFigureArea(new double[]
-            {
-                0.0,5.0,1.0
-            }));
+            Assert.Throws<ArgumentException>(() => new XFigureArea("Triangle -5.0 5.0 1.0"));
+            Assert.Throws<ArgumentException>(() => new XFigureArea("Triangle 0.0 5.0 1.0"));
         }
         [Fact]
         public void GetTriangleAreaNotTriangle()
         {
-            Assert.Throws<NotTriangle>(() => new XFigureArea("Triangle",new double[]
-            {
-                1.0,1.0,5.0
-            }));
-            
+            Assert.Throws<NotTriangle>(() => new XFigureArea("Triangle 1.0 1.0 5.0"));
+
         }
         [Fact]
         public void GetRightTriangle()
@@ -88,6 +65,25 @@ namespace FigureArea.Tests
             });
             Assert.True(triangle.rightTriangle);
 
+        }
+        [Fact]
+        public void GetValueTrue()
+        {
+            GetValue getValue = new GetValue("Circle 2.0 3.0 5.0");
+            Assert.Equal("Circle", getValue.FigureName);
+            Assert.Equal(3, getValue.Count);
+        }
+        [Fact]
+        public void GetValueNotDouble()
+        {
+            Assert.Throws<ArgumentException>(() => new GetValue("Circle s1 3.0 5.0"));
+        }
+        [Fact]
+        public void NotCorrectData()
+        {
+            Assert.Throws<ArgumentException>(() => new GetValue("ass das dse "));
+            Assert.Throws<ArgumentException>(() => new GetValue(" "));
+            Assert.Throws<ArgumentException>(() => new GetValue("A"));
         }
     }
 }
